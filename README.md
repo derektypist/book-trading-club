@@ -16,7 +16,9 @@ As a user, I can propose a trade and wait for the other user to accept the trade
 
 ### Content
 
-Taken from Jeremy L Shepherd, accessed on 17 September 2021.
+Taken from [Jeremy L Shepherd](https://github.com/jeremylshepherd), accessed on 17 September 2021.
+
+[]
 
 ### Acknowledgements
 

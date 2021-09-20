@@ -10,3 +10,12 @@ const BooksSchema = new Schema({
   id: {type: String}
 });
 
+const Books = mongoose.model("Books",BooksSchema);
+
+// User Schema
+const UsersSchema = new Schema({
+  name: {type: String},
+  city: {type: String},
+  county: {type: String},
+  country: {type: String}
+})

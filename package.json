@@ -2,7 +2,7 @@
   "name": "book-trading-club",
   "version": "1.0.0",
   "description": "The purpose of the project is to build a book trading club similar to https://manage-a-book-trading-club.freecodecamp.rocks/",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
     "start": "node server.js",
     "test": "echo \"Error: no test specified\" && exit 1"

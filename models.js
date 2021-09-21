@@ -36,4 +36,8 @@ UserSchema.methods.genHash = (password) => {
 };
 
 // Compare input password with database password
+UserSchema.methods.validPassword = (password) => {
+  return bcrypt.compareSync(password, this.local.password);
+};
+
 

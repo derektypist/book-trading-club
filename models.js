@@ -1,21 +1,29 @@
 const mongoose = require('mongoose');
+const bcrypt = require('bcrypt')
 const {Schema} = mongoose;
 
 // Book Schema
-const BooksSchema = new Schema({
+const BookSchema = new Schema({
   title: {type: String},
   description: {type: String},
   author: {type: String},
   category: {type: String},
-  id: {type: String}
+  id: {type: String},
+  owner: {type: Schema.Types.ObjectId, ref:'User'},
+  status: {type: String,
+    enum: ['available','pending'],
+    default: 'available'}
 });
 
-const Books = mongoose.model("Books",BooksSchema);
+const Book = mongoose.model("book",BookSchema);
 
 // User Schema
-const UsersSchema = new Schema({
-  name: {type: String},
-  city: {type: String},
+const UserSchema = new Schema({
+  local: {username: {type: String, required: true},
+  email: {type: String, required: true},
+  password: {type: String, required: true},
+  addedbooks: [{type: Schema.Types.ObjectId, ref: 'Book'}],
+  city: {type: String}},
   county: {type: String},
   country: {type: String}
 })

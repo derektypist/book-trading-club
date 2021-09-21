@@ -26,4 +26,5 @@ const UserSchema = new Schema({
   city: {type: String}},
   county: {type: String},
   country: {type: String}
-})
+});
+

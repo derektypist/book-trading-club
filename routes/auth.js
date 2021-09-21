@@ -6,7 +6,7 @@ const router = express.Router();
 router.get('/signup', function(req,res) {
   res.render('signup', {
     title: "Signup",
-    message: "Signed Up"
+    message: req.flash('signupMessage')
   });
 });
 

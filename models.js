@@ -68,3 +68,8 @@ const TradeSchema = new Schema({
 });
 
 const Trade = mongoose.model("trade",TradeSchema);
+
+// Export Modules
+exports.Book = Book;
+exports.User = User;
+exports.Trade = Trade;

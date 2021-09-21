@@ -25,7 +25,7 @@ router.get('/',isLoggedIn,function(req,res) {
         let reqsFromUserToOwnerCount = reqsFromUserToOwner.length;
         res.render('allbooks', {
           title: 'All Books',
-          message: 'Trade Requests Accepted',
+          message: req.flash('tradeMessage'),
           books: books,
           reqsFromOwnerToUser: reqsFromOwnerToUser,
           reqsFromUserToOwner: reqsFromUserToOwner

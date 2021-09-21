@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-const bcrypt = require('bcrypt')
+const bcrypt = require('bcrypt');
 const {Schema} = mongoose;
 
 // Book Schema
@@ -27,4 +27,13 @@ const UserSchema = new Schema({
   county: {type: String},
   country: {type: String}
 });
+
+// Apply hashing password
+let saltRounds = 10;
+let salt = bcrypt.genSaltSync(saltRounds);
+UserSchema.methods.genHash = (password) => {
+  return bcrypt.hashSync(password, salt);
+};
+
+// Compare input password with database password
 

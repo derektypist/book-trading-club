@@ -18,7 +18,7 @@ Book consists of title, description, author, category, id, owner and status.  Al
 
 The user consists of local - username, email, password, addedbooks, city, county and country.  All are string except addedbooks, which is an Object ID.  username, email and password are required.  In addition, addedbooks is an array.
 
-The trade consists of 
+The trade consists of from, to, book, status and created_at.  The from, to and book fields have type of Object ID.  The status is a string - it has `pending`, `approved` or `rejected`.  The status default is `pending`.  The created_at field is a date.  It is currently at the present date.
 
 ## Credits
 

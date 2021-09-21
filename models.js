@@ -8,7 +8,7 @@ const BookSchema = new Schema({
   description: {type: String},
   author: {type: String},
   category: {type: String},
-  id: {type: String},
+  bookid: {type: String},
   owner: {type: Schema.Types.ObjectId, ref:'User'},
   status: {type: String,
     enum: ['available','pending'],

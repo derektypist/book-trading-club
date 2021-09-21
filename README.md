@@ -18,9 +18,7 @@ As a user, I can propose a trade and wait for the other user to accept the trade
 
 Taken from [Jeremy L Shepherd](https://github.com/jeremylshepherd), accessed on 17 September 2021.
 
-[]
-
 ### Acknowledgements
 
 [Jeremy L Shepherd](https://jeremylshepherd.io/598a63ca1a426b0012850853)
-
+[Tri Vi](https://github.com/triminhvi/Book_Trading_Club)

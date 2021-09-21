@@ -40,4 +40,31 @@ UserSchema.methods.validPassword = (password) => {
   return bcrypt.compareSync(password, this.local.password);
 };
 
+const User = mongoose.model("user",UserSchema);
 
+// Trade Schema
+const TradeSchema = new Schema({
+  from: {
+    type: Schema.Types.ObjectId,
+    ref: 'User'
+  },
+  to: {
+    type: Schema.Types.ObjectId,
+    ref: 'User'
+  },
+  book: {
+    type: Schema.Types.ObjectId,
+    ref: 'Book'
+  },
+  status: {
+    type: String,
+    enum: ['pending','approved','rejected'],
+    default: 'pending'
+  },
+  created_at: {
+    type: Date,
+    default: Date.now
+  }
+});
+
+const Trade = mongoose.model("trade",TradeSchema);

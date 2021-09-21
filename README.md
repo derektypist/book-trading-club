@@ -16,7 +16,9 @@ As a user, I can propose a trade and wait for the other user to accept the trade
 
 Book consists of title, description, author, category, id, owner and status.  All string except owner, which is an Object ID.  Status is `available` or `pending`.  The default for status is `available`. 
 
-The user consists of local - username, email, password, addedbooks, city, county and country.  All are string except addedbooks, which is an Object ID.  username, email and password are required.
+The user consists of local - username, email, password, addedbooks, city, county and country.  All are string except addedbooks, which is an Object ID.  username, email and password are required.  In addition, addedbooks is an array.
+
+The trade consists of 
 
 ## Credits
 

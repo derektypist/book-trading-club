@@ -61,6 +61,39 @@ router.post('/setting/:id', isLoggedIn, function(req,res) {
   });
 });
 
+// Add the book to profile
+router.post('/addBook',isLoggedIn, function(req,res) {
+  let myNewBook = new Book();
+  myNewBook.bookid = req.body.bookid;
+  myNewBook.title = req.body.title;
+  myNewBook.description = req.body.description;
+  myNewBook.author = req.body.author;
+  myNewBook.category = req.body.category;
+  myNewBook.owner = req.user._id;
+  myNewBook.status = req.body.status;
+
+  // Save the book
+  myNewBook.save(function(err) {
+    if (err) {
+      console.log(err);
+    }
+
+    User.findById(req.user._id, function(err,user) {
+      if (err) {
+        console.log(err);
+        return;
+      }
+      user.local.addedbooks.push(myNewBook);
+      user.save(function(err) {
+        if (err) {
+          console.log(err);
+          return;
+        }
+        res.redirect('/profile');
+      });
+    });
+  });
+});
 
 // Login function
 function isLoggedIn(req,res,next) {

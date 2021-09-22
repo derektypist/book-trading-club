@@ -95,6 +95,37 @@ router.post('/addBook',isLoggedIn, function(req,res) {
   });
 });
 
+// Delete Book from the Profile
+router.post('/removeBook/:bookID',isLoggedIn, function(req,res) {
+  let book_id = req.params.bookID;
+  User.findById(req.user._id, function(err,user) {
+    if (err) {
+      console.log(err);
+      return;
+    }
+
+    let bookIndex = user.local.addedbooks.indexOf(book_id);
+    user.local.addedbooks.splice(bookIndex, 1);
+    user.save(function(err) {
+      if (err) {
+        console.log(err);
+        return;
+      }
+
+    Book.findByIdAndRemove(book_id, function(err, book) {
+      if (err) {
+        console.log(err);
+        return;
+      }
+      res.redirect('/profile');
+      });
+    });
+  });
+});
+
+
+
+
 // Login function
 function isLoggedIn(req,res,next) {
   if (req.isAuthenticated()) {

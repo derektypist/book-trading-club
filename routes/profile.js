@@ -11,7 +11,17 @@ const Trade = require('../models').Trade;
 
 // Profile Route
 router.get('/', isLoggedIn, function(req,res) {
+  Book.find({owner: req.user._id}).exec(function(err,books) {
+    if (err) {
+      console.log(err);
+      return;
+    }
 
+    res.render("profile", {
+      title: "Profile Page",
+      books: books
+    });
+  });
 });
 
 

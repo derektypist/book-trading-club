@@ -123,7 +123,12 @@ router.post('/removeBook/:bookID',isLoggedIn, function(req,res) {
   });
 });
 
-
+// Trade Books
+router.post('/trade/:bookID', isLoggedIn, function(req,res) {
+  let book_id = req.params.bookID;
+  let currentUser = req.user._id;
+  
+});
 
 
 // Login function

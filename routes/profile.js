@@ -10,3 +10,17 @@ const User = require('../models').User;
 const Trade = require('../models').Trade;
 
 // Profile Route
+router.get('/', isLoggedIn, function(req,res) {
+
+});
+
+
+// Login function
+function isLoggedIn(req,res,next) {
+  if (req.isAuthenticated()) {
+    return next();
+  }
+  res.redirect('/');
+}
+
+module.exports = router;

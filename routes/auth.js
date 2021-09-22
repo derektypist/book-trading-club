@@ -16,6 +16,24 @@ router.post('/signup', passport.authenticate('local-signup'), {
   failfureFlash: true
 });
 
+// Login
+router.get('/login', function(req,res) {
+  res.render('login', {
+    title: "Login",
+    message: req.flash('loginMessage')
+  });
+});
 
+router.post('/login', passport.authenticate('local-login'), {
+  successRedirect: '/profile',
+  failureRedirect: '/auth/login',
+  failfureFlash: true
+});
+
+// Logout
+router.get('/logout', function(req,res) {
+  req.logout();
+  res.redirect();
+});
 
 module.exports = router;

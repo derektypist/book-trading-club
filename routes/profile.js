@@ -24,6 +24,43 @@ router.get('/', isLoggedIn, function(req,res) {
   });
 });
 
+// Change the Profile Setting
+router.get('/setting/:id', isLoggedIn, function(req,res) {
+  res.render('profile_setting', {
+    title: 'Setting',
+    message: req.flash('settingMessage')
+  });
+});
+
+// Update the Post Setting
+router.post('/setting/:id', isLoggedIn, function(req,res) {
+  let id = req.params.id;
+  let myNewUsername = req.body.username;
+  let myNewEmail = req.body.email;
+  let myNewPassword = req.body.password;
+  let salt = bcrypt.genSaltSync(saltRounds);
+  let hash = bcrypt.hashSync(myNewPassword, salt);
+  let myNewCity = req.body.city;
+  let myNewCounty = req.body.county;
+  let myNewCountry = req.body.country;
+  User.findByIdAndUpdate(id, {
+    "local.username": myNewUsername,
+    "local.email": myNewEmail,
+    "local.password": hash,
+    "local.city": myNewCity,
+    "local.county": myNewCounty,
+    "local.country": myNewCountry
+  }, {
+    new: true
+  }, function(err,user) {
+    if (err) {
+      res.flash('settingMessage','There is an error.  Please check your input or try again later!');
+      res.redirect('/');
+    }
+    res.redirect('/profile');
+  });
+});
+
 
 // Login function
 function isLoggedIn(req,res,next) {

@@ -22,7 +22,7 @@ The trade consists of from, to, book, status and created_at.  The from, to and b
 
 ## Technologies
 
-Uses Express, Passport, MongoDB and Mongoose.
+Uses Bcrypt, Express, Passport, MongoDB and Mongoose.
 
 ## Credits
 

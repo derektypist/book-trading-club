@@ -127,7 +127,53 @@ router.post('/removeBook/:bookID',isLoggedIn, function(req,res) {
 router.post('/trade/:bookID', isLoggedIn, function(req,res) {
   let book_id = req.params.bookID;
   let currentUser = req.user._id;
-  
+  Book.findById(book_id).populate({path:'owner', model:'user'}).exec(function(err,book) {
+    let bookOwner = book.owner._id;
+    // If requester is current user, flash bad request
+    if (currentUser.equals(bookOwner)) {
+      req.flash('tradeMessage',"Bad Request");
+      res.redirect('/allbooks');
+    } else {
+      // Find if trade existed
+      Trade.findOne({from:currentUser,to:bookOwner,book:book._id,status:'pending'}, function(err,trade) {
+        if (err) {
+          console.log(err);
+          return;
+        }
+        if (trade) {
+          // If trade existed, flash message and redirect to allbooks Page
+          console.log('You already submitted trade request to the book owner');
+          req.flash('tradeMessage','You already submitted trade request to the book owner');
+          res.redirect('/allbooks');
+        } else {
+          // If trade does not exist, save new trade request to new collection
+          let myNewTrade = new Trade();
+          myNewTrade.from = currentUser;
+          myNewTrade.to = bookOwner;
+          myNewTrade.book = book;
+
+          // Save new trade request
+          myNewTrade.save(function(err) {
+            if (err) {
+              console.log(err);
+              return;
+            }
+
+            // Change book status from available to pending
+            book.status = 'pending';
+            // Save new book status
+            book.save(function(err) {
+              if (err) {
+                console.log(err);
+              }
+              req.flash('tradeMessage','Good Request');
+              res.redirect('/allbooks');
+            });
+          });
+        }
+      });
+    }
+  });
 });
 
 

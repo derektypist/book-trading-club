@@ -30,7 +30,12 @@ Uses Express, Passport, MongoDB and Mongoose.
 
 Taken from [Jeremy L Shepherd - GitHub Profile](https://github.com/jeremylshepherd), accessed on 17 September 2021.
 
+Tri Vi 
+
+Information Accessed between 17 September 2021 and 23 September 2021.  Did searches on GitHub and FreeCodeCamp Forums.
+
 ### Acknowledgements
 
 - [Jeremy L Shepherd](https://jeremylshepherd.io/598a63ca1a426b0012850853)
 - [Tri Vi - GitHub Repository ](https://github.com/triminhvi/Book_Trading_Club)
+- [Sam Milledge - GitHub Repository on Google Search Books](https://github.com/smilledge/node-google-books-search)

@@ -68,6 +68,9 @@ router.post('/addBook',isLoggedIn, function(req,res) {
   myNewBook.title = req.body.title;
   myNewBook.description = req.body.description;
   myNewBook.author = req.body.author;
+  myNewBook.publisher = req.body.publisher;
+  myNewBook.link = req.body.link;
+  myNewBook.imageurl = req.body.imageurl;
   myNewBook.category = req.body.category;
   myNewBook.owner = req.user._id;
   myNewBook.status = req.body.status;

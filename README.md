@@ -2,6 +2,8 @@
 
 The purpose of the project is to build a book trading club similar to https://manage-a-book-trading-club.freecodecamp.rocks/
 
+The book trading club has something for everyone.  Items include Web Development, Sports, etc.
+
 ## UX
 
 As a user, I can view all books posted by every user.
@@ -22,7 +24,7 @@ The trade consists of from, to, book, status and created_at.  The from, to and b
 
 ## Technologies
 
-Uses Bcrypt, Express, Passport, MongoDB and Mongoose.
+Uses Bcrypt, Body Parser, Connect Flash, Express, Google Books Search, Passport, MongoDB and Mongoose.
 
 ## Credits
 

@@ -6,6 +6,8 @@ The book trading club has something for everyone.  Items include Web Development
 
 ## UX
 
+**User Stories**
+
 As a user, I can view all books posted by every user.
 
 As a user, I can add a new book.
@@ -25,6 +27,10 @@ The trade consists of from, to, book, status and created_at.  The from, to and b
 ## Technologies
 
 Uses Bcrypt, Body Parser, Connect Flash, Express, Google Books Search, Passport, MongoDB and Mongoose.
+
+## Deployment
+
+This project is on REPL.
 
 ## Credits
 

@@ -98,6 +98,36 @@ router.post('/rejectRequest/:tradeID', isLoggedIn, function(req,res) {
   res.send('rejected request');
 });
 
+// Cancel the Request
+router.post('/cancelRequest/:tradeID',isLoggedIn,function(req,res) {
+  // Cancel request from Current User to book owner
+  let trade_id = req.params.tradeID;
+  Trade.findById(trade_id).populate({path:'book',model:'book'}).exec(function(err,trade) {
+    if (err) {
+      console.log(err);
+      return;
+    }
+    let book_id = trade.book._id;
+    Book.findById(book_id).exec(function(err,book) {
+      console.log(book);
+      book.status = 'available';
+      book.save(function(err) {
+        if (err) {
+          console.log(err);
+          return;
+        }
+        trade.remove(function(err) {
+          if (err) {
+            console.log(err);
+            return;
+          }
+          res.redirect('/allbooks');
+        });
+      });
+    });
+  });
+});
+
 // LogIn function
 function isLoggedIn(req,res,next) {
   if (req.isAuthenticated()) {

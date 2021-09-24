@@ -26,7 +26,7 @@ The trade consists of from, to, book, status and created_at.  The from, to and b
 
 ## Technologies
 
-Uses Bcrypt, Body Parser, Connect Flash, Express, Google Books Search, Passport, MongoDB and Mongoose.
+Uses Bcrypt, Body Parser, Connect Flash, Express, Google Books Search, Passport, MongoDB, Pug and Mongoose.
 
 ## Deployment
 
@@ -47,3 +47,4 @@ Information Accessed between 17 September 2021 and 23 September 2021.  Did searc
 - [Jeremy L Shepherd](https://jeremylshepherd.io/598a63ca1a426b0012850853)
 - [Tri Vi - GitHub Repository ](https://github.com/triminhvi/Book_Trading_Club)
 - [Sam Milledge - GitHub Repository on Google Search Books](https://github.com/smilledge/node-google-books-search)
+- [Pug](https://pugjs.org)

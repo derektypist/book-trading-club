@@ -29,8 +29,43 @@ router.post('/acceptRequest/:tradeID',isLoggedIn, function(req,res) {
           console.log(err);
           return;
         }
+        // Add new book to new owner's book list
+        User.findById(theNewOwnerId).exec(function(err,user) {
+        user.local.addedbooks.push(book_id);
+        user.save(function(err) {
+          if (err) {
+            console.log(err);
+            return;
+          }
+          // Remove the trade book from the old book owner's book list
+          User.findById(theOldOwnerId).exec(function(err,user) {
+            if (err) {
+              console.log(err);
+              return;
+            }
+            let bookIndex = user.local.addedbooks.indexOf(book_id);
+            // Pop the book out of the array
+            user.local.addedbooks.splice(bookIndex,1);
+            user.save(function(err) {
+              if (err) {
+                console.log(err);
+                return;
+              }
+              // Remove the trade transaction
+              trade.remove(function(err) {
+                if (err) {
+                  console.log(err);
+                  return;
+                }
+                res.redirect('/allbooks');
+              });
+            });
+          });
+        });
       });
     });
+     
+  });
   });
 });
 

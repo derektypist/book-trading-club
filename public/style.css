@@ -1,8 +1,5 @@
-/* Import Fonts */
-
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 
-/* Body */
 body {
   font-family: "Roboto", Arial, Verdana, sans-serif;
 }

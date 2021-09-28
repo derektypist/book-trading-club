@@ -34,3 +34,6 @@ const Book = require('./models').Book;
 const User = require('./models').User;
 const Trade = require('./models').Trade;
 
+// Passport Config
+require('./config/passport.js')(passport);
+

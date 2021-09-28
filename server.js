@@ -2,6 +2,8 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
 const mongoose = require('mongoose');
+const url = require('./config/db.js').url;
+mongoose.connect(url);
 const session = require('express-session');
 const passport = require('passport');
 const flash = require('connect-flash');
@@ -52,3 +54,9 @@ const option = require('./config/bookapi.js');
 // Routes
 const auth = require('./routes/auth.js');
 app.use('/auth', auth);
+const profile = require('./routes/profile.js');
+app.use('/profile',profile);
+const trade = require('./routes/trade.js');
+app.use('/trade',trade);
+const allbooks = require('./routes/allbooks.js');
+app.use('/allbooks',allbooks);

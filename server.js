@@ -30,6 +30,15 @@ app.use(function(req,res,next) {
 });
 
 // DB
+let db = mongoose.connection;
+db.on('error', function(err) {
+  console.log(err);
+});
+
+db.on('open', function() {
+  console.log('Connected to DB');
+});
+
 const Book = require('./models').Book;
 const User = require('./models').User;
 const Trade = require('./models').Trade;
@@ -37,3 +46,9 @@ const Trade = require('./models').Trade;
 // Passport Config
 require('./config/passport.js')(passport);
 
+// Book API
+const option = require('./config/bookapi.js');
+
+// Routes
+const auth = require('./routes/auth.js');
+app.use('/auth', auth);

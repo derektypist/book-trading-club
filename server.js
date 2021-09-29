@@ -62,7 +62,7 @@ const allbooks = require('./routes/allbooks.js');
 app.use('/allbooks',allbooks);
 
 // App Start
-app.get(function(req, res) {
+app.get('/', function(req, res) {
   books.search('Web Development', {
     field: 'title',
     offset: 0,
@@ -78,6 +78,28 @@ app.get(function(req, res) {
         title: 'Home',
         books: results
       });
+    }
+  });
+});
+
+app.get('/search', function(req,res) {
+  let title = req.query.title;
+  books.search(title, {
+    field: 'title',
+    offset: 0,
+    limit: 40,
+    type: 'books',
+    order: 'relevance',
+    lang: 'en'
+  }, function(error,results,apiResponse) {
+    if (!error) {
+      res.render('search', {
+        title: 'Search Book',
+        books: results
+      });
+    } else {
+      console.log(error);
+      res.status(404).send('File Not Found!');
     }
   });
 });

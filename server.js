@@ -60,3 +60,24 @@ const trade = require('./routes/trade.js');
 app.use('/trade',trade);
 const allbooks = require('./routes/allbooks.js');
 app.use('/allbooks',allbooks);
+
+// App Start
+app.get(function(req, res) {
+  books.search('Web Development', {
+    field: 'title',
+    offset: 0,
+    limit: 9,
+    type: 'books',
+    order: 'relevance',
+    lang: 'en'
+  }, function(error,results,apiResponse) {
+    if (error) {
+      res.send(error);
+    } else {
+      res.render('index', {
+        title: 'Home',
+        books: results
+      });
+    }
+  });
+});

@@ -17,13 +17,21 @@ html
         button(class='navbar-toggler navbar-toggler-right' type='button' data-toggle='collapse' data-target='#navbarColor01' aria-controls='navbarColor01' aria-expanded='false' aria-label='Toggle navigation')
           span(class='navbar-toggler-icon')
         a(class='navbar-brand' href='/') Book TC
+        article(class='collapse navbar-collapse' id='navbarColor01')
+          ul(class='navbar-nav mr-auto')
+            li(class='nav-item')
+              form(class='d-flex' action='/search' method='get')
+                input(class='form-control mr-sm-2' type='text' placeholder='Book Title (e.g. London)' name='title')
+                button(class='btn btn-outline-success' type='submit') Search
+                  i(class='fas fa-search')
+    
     article(class='jumbotron')
       article(class='container-fluid text-center')
         h2(class='display-4') Welcome to Book Trading Club
           i(class='fas fa-book')
         p You can search the book you want and make a book trading request with other peers
         //- Set Up Form
-        form(action='/search' method='get')
+        form(action='/search' method='get' class='d-flex')
           article(class='input-group mb-3')
             input(type='text' class='form-control' placeholder='Enter Book Title (e.g. London)' name='title')
             span(class='input-group-btn')

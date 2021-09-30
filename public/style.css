@@ -5,3 +5,18 @@
 body {
   font-family: "Roboto", Arial, Verdana, sans-serif;
 }
+
+/* Card */
+.card-header {
+  height: 100px;
+}
+
+.center-block {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Jumbotron */
+.jumbotron {
+  background-color: lightblue;
+}

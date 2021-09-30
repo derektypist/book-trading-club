@@ -24,7 +24,22 @@ html
                 input(class='form-control mr-sm-2' type='text' placeholder='Book Title (e.g. London)' name='title')
                 button(class='btn btn-outline-success' type='submit') Search
                   i(class='fas fa-search')
-    
+          // Set Navbar according to user login
+          ul(class='navbar-nav mr-pills')
+            if !user
+              li(class='nav-item')
+                a(class='nav-link' href='/auth/login')Log In
+              li(class='nav-item')
+                a(class='nav-link' href='/auth/signup')Sign Up
+            else
+              li(class='nav-item active')
+                a(class='nav-link' href='/profile')Welcome #{user.local.username}!
+              li(class='nav-item active')
+                a(class='nav-link' href='/allbooks')All Books
+              li(class='nav-item active')
+                a(class='nav-link' href='/profile/setting/#{user._id}')Setting
+              li(class='nav-item active')
+                a(class='nav-link' href='/auth/logout')Log Out
     article(class='jumbotron')
       article(class='container-fluid text-center')
         h2(class='display-4') Welcome to Book Trading Club
@@ -45,13 +60,11 @@ html
         - each book in books
             article(class='col md-4 mb-4')
               article(class='card')
-                h6(class='card-header')= book.title
+                h6(class='card-header') #{book.title}
                 article(class='card-block mt-2')
-                  h6(class='card-title ml-4') ISBN13:
-                    span(id='isbn')= book.industryIdentifiers[0].identifier
-                  h6(class='card-subtitle text-muted ml-4') Publisher:
-                    span= book.publisher
-                img(class='center-block mt-3 mb-3' style='height: 168px; width: 128px; display: block' src='= book.thumbnail' alt='Card Image')
+                  h6(class='card-title ml-4') ISBN13: #{book.industryIdentifiers[0].identifier}
+                  h6(class='card-subtitle text-muted ml-4') Publisher: #{book.publisher}
+                img(class='center-block mt-3 mb-3' style='height: 168px; width: 128px; display: block' src='#{book.thumbnail}' alt='Card Image')
                 article(class='card-block')
-                  a(href='= book.link' class='card-link btn btn-primary btn-block' target='_blank') More Info
+                  a(href='#{book.link}' class='card-link btn btn-primary btn-block' target='_blank') More Info
 

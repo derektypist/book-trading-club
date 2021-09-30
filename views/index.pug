@@ -11,7 +11,12 @@ html
     // Load Scripts
     script(src='https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js')
   body
-    //- Navbar to go
+    // Navbar
+    nav(class='navbar navbar-expand-lg navbar-dark bg-primary')
+      article(class='container-fluid')
+        button(class='navbar-toggler navbar-toggler-right' type='button' data-toggle='collapse' data-target='#navbarColor01' aria-controls='navbarColor01' aria-expanded='false' aria-label='Toggle navigation')
+          span(class='navbar-toggler-icon')
+        a(class='navbar-brand' href='/') Book TC
     article(class='jumbotron')
       article(class='container-fluid text-center')
         h2(class='display-4') Welcome to Book Trading Club
@@ -25,7 +30,7 @@ html
               button(class='btn btn-success' type='submit') Search 
                 i(class='fas fa-search')
     // Recent Search Items
-    article(id='recent-search' class='container')
+    article(id='recent-search' class='container-fluid')
       h1 Recent Search
       // Display Search Results
       article(class='row mt-4 mb-4')

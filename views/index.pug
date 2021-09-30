@@ -15,15 +15,23 @@ html
     article(class='jumbotron')
       article(class='container-fluid text-center')
         h2(class='display-4') Welcome to Book Trading Club
+          i(class='fas fa-book')
         p You can search the book you want and make a book trading request with other peers
         //- Set Up Form
         form(action='/search' method='get')
           article(class='input-group mb-3')
-          input(type='text' class='form-control' placeholder='Enter Book Title (e.g. London)' name='title')
-          span(class='input-group-btn')
-          button(class='btn btn-success' type='submit') Search
+            input(type='text' class='form-control' placeholder='Enter Book Title (e.g. London)' name='title')
+            span(class='input-group-btn')
+              button(class='btn btn-success' type='submit') Search 
+                i(class='fas fa-search')
     // Recent Search Items
     article(id='recent-search' class='container')
       h1 Recent Search
       // Display Search Results
       article(class='row mt-4 mb-4')
+        - each book in books
+            article(class='col md-4 mb-4')
+              article(class='card')
+                h6(class='card-header')=book.title
+                article(class='card-block mt-2')
+                  

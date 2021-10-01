@@ -48,7 +48,8 @@ html
         p #{message}
     article(class='container-fluid')
       // Get Trade Requests Information
-      h2 Hello #{user.local.username}
+      h2 Hello #{user.local.username} 
+        i(class='fas fa-user')
       button(type='button' class='btn btn-primary ') Your trade requests
         span(class='badge bg-light ml-4') #{reqsFromUserToOwner.length}
       button(type='button' class='btn btn-info') Trade requests for you
@@ -78,6 +79,16 @@ html
                         input(type='submit' class='btn btn-block' value='Reject')
         hr
         // Display All Books
-        
+        h2(class='mt-2')All Books 
+          i(class='fas fa-book')
+        article(class='row')
+          each book in books
+            article(class='col-lg-3 mt-2 mb-2')
+              article(class='card')
+                img(class='center-block mt-3 mb-3' style='height:168px; width:128px;' src='#{book.imageurl}' alt='Card Image')
+                article(class='card-block')
+                  form(action='/profile/trade/#{book._id}' method='post')
+                    input(type='submit' class='btn btn-info btn-block' value='Trade')
+
 
       

@@ -18,7 +18,7 @@ As a user, I can propose a trade and wait for the other user to accept the trade
 
 **Information Architecture**
 
-Book consists of title, description, author, publisher, link, imageurl, category, bookid, owner and status.  All are string except owner, which is an Object ID.  Status is `available` or `pending`.  The default for status is `available`. 
+Book consists of title, description, author, publisher, link, imageurl, bookid, owner and status.  All are string except owner, which is an Object ID.  Status is `available` or `pending`.  The default for status is `available`. 
 
 The user consists of local - username, email, password, addedbooks, city, county and country.  All are string except addedbooks, which is an Object ID.  username, email and password are required.  In addition, addedbooks 
 is an array.
@@ -36,7 +36,7 @@ Google Books Search
 
 ## Technologies
 
-Uses Bcrypt, Body Parser, Connect Flash, Express, Google Books Search, Passport, MongoDB, Pug and Mongoose.
+Uses Bcrypt, Body Parser, Connect Flash, Express, Google Books Search, Bootstrap 5.1.1, Font Awesome 5.15.4, Passport, MongoDB, Pug and Mongoose.
 
 ## Deployment
 
@@ -50,7 +50,7 @@ Taken from [Jeremy L Shepherd - GitHub Profile](https://github.com/jeremylshephe
 
 Tri Vi 
 
-Information Accessed between 17 September 2021 and 23 September 2021.  Did searches on GitHub and FreeCodeCamp Forums.
+Information Accessed between 17 September 2021 and 1 October 2021.  Did searches on GitHub and FreeCodeCamp Forums.
 
 ### Acknowledgements
 
@@ -58,3 +58,4 @@ Information Accessed between 17 September 2021 and 23 September 2021.  Did searc
 - [Tri Vi - GitHub Repository ](https://github.com/triminhvi/Book_Trading_Club)
 - [Sam Milledge - GitHub Repository on Google Search Books](https://github.com/smilledge/node-google-books-search)
 - [Pug](https://pugjs.org)
+- [Bootstrap](https://getbootstrap.com)

@@ -10,7 +10,6 @@ const BookSchema = new Schema({
   publisher: {type: String},
   link: {type: String},
   imageurl: {type: String},
-  category: {type: String},
   bookid: {type: String},
   owner: {type: Schema.Types.ObjectId, ref:'User'},
   status: {type: String,

@@ -55,8 +55,15 @@ html
       button(type='button' class='btn btn-info') Trade requests for you
         span(class='badge bg-light ml-4') #{reqsFromOwnerToUser.length}
       if (reqsFromUserToOwner.length > 0)
-        hr
         // Display Trade Requests from User to Owner
+        hr
+        article(class='row')
+          article(class='col-lg-12')
+            p(style='color:orange;')Your trade requests
+            
+
+      if (reqsFromOwnerToUser.length > 0)
+        // Display Trade Requests from Owner to User
         article(class='row')
           article(class='col-lg-12')
             p(style='color:orange;') Trade requests for you

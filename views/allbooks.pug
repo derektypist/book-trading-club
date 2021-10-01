@@ -37,12 +37,19 @@ html
               li(class='nav-item active')
                 a(class='nav-link' href='/allbooks')All Books
               li(class='nav-item active')
-                a(class='nav-link' href='/profile/setting/#{user._id}')Setting
+                a(class='nav-link' href='/profile/setting/#{user._id}') Setting
               li(class='nav-item active')
                 a(class='nav-link' href='/auth/logout')Log Out
     if (message.length > 0)
+      // If there are messages
       article(class='alert alert-dismissable alert-warning container-class mt-3')
         button(type='button' class='close' data-dismiss='alert')&times;
         h4 Warning!
         p #{message}
+    article(class='container-fluid')
+      // Get Trade Requests Information
+      h2 Hello #{user.local.username}
+      button(type='button' class='btn btn-primary ') Your trade requests
+        span(class='badge bg-light ml-4') #{reqsFromUserToOwner.length}
+      button(type='button' class='btn btn-info')
       

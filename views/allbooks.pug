@@ -60,8 +60,22 @@ html
         article(class='row')
           article(class='col-lg-12')
             p(style='color:orange;')Your trade requests
-            
-
+            // Set Up Table
+            table(class='table table-striped table-hover table-bordered mt-2')
+              thead
+                tr
+                  th #
+                  th Book Title
+                  th Action
+              tbody
+                tr
+                  each tradeReq, i in reqsFromUserToOwner
+                    tr
+                      td i+1
+                      td tradeReq.book.title
+                      td
+                        form(action='trade/cancelRequest/#{tradeReq._id}' method='post')
+                          input(type='submit' class='btn btn-warning' value='Cancel Request')
       if (reqsFromOwnerToUser.length > 0)
         // Display Trade Requests from Owner to User
         article(class='row')
@@ -77,13 +91,14 @@ html
               tbody
                 tr
                   each tradeReq, i in reqsFromOwnerToUser
-                    td i+1
-                    td tradeReq.book.title
-                    td
-                      form(action='trade/acceptRequest/#{tradeReq._id}' method='post')
-                        input(type='submit' class='btn btn-block btn-success' value='Accept')
-                      form(action='trade/rejectRequest/#{tradeReq._id' method='post')
-                        input(type='submit' class='btn btn-block' value='Reject')
+                    tr
+                      td i+1
+                      td tradeReq.book.title
+                      td
+                        form(action='trade/acceptRequest/#{tradeReq._id}' method='post')
+                          input(type='submit' class='btn btn-block btn-success' value='Accept')
+                        form(action='trade/rejectRequest/#{tradeReq._id' method='post')
+                          input(type='submit' class='btn btn-block' value='Reject')
         hr
         // Display All Books
         h2(class='mt-2')All Books 

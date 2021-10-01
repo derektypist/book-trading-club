@@ -51,5 +51,33 @@ html
       h2 Hello #{user.local.username}
       button(type='button' class='btn btn-primary ') Your trade requests
         span(class='badge bg-light ml-4') #{reqsFromUserToOwner.length}
-      button(type='button' class='btn btn-info')
+      button(type='button' class='btn btn-info') Trade requests for you
+        span(class='badge bg-light ml-4') #{reqsFromOwnerToUser.length}
+      if (reqsFromUserToOwner.length > 0)
+        hr
+        // Display Trade Requests from User to Owner
+        article(class='row')
+          article(class='col-lg-12')
+            p(style='color:orange;') Trade requests for you
+            // Set Up Table
+            table(class='table table-striped table-hover table-bordered mt-2')
+              thead
+                tr
+                  th #
+                  th Book Title
+                  th Action
+              tbody
+                tr
+                  each tradeReq, i in reqsFromOwnerToUser
+                    td i+1
+                    td tradeReq.book.title
+                    td
+                      form(action='trade/acceptRequest/#{tradeReq._id}' method='post')
+                        input(type='submit' class='btn btn-block btn-success' value='Accept')
+                      form(action='trade/rejectRequest/#{tradeReq._id' method='post')
+                        input(type='submit' class='btn btn-block' value='Reject')
+        hr
+        // Display All Books
+        
+
       

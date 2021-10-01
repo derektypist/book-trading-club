@@ -107,7 +107,7 @@ html
           each book in books
             article(class='col-lg-3 mt-2 mb-2')
               article(class='card')
-                img(class='center-block mt-3 mb-3' style='height:168px; width:128px;' src='#{book.imageurl}' alt='Card Image')
+                img(class='center-block mt-3 mb-3' style='height:168px; width:128px;display:block;' src='#{book.imageurl}' alt='Card Image')
                 article(class='card-block')
                   form(action='/profile/trade/#{book._id}' method='post')
                     input(type='submit' class='btn btn-info btn-block' value='Trade')

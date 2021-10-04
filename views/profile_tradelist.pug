@@ -69,7 +69,9 @@ html
                           td #{book.publisher}
                           td
                             form(action='/profile/removeBook/#{book._id'} method='post')
-                              input(type='submit' class='btn btn-primary btn-block' value='Remove')
+                              input(type='submit' class='btn btn-primary btn-block' value='Remove') &nbsp;
+                            form(action='/profile/trade/#{book._id}' method='post')
+                              input(type='submit' class='btn btn-success btn-block' value='Trade')
           else
             h4 Your book list is currently empty
 

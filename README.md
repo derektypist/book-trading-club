@@ -18,7 +18,7 @@ As a user, I can propose a trade and wait for the other user to accept the trade
 
 **Information Architecture**
 
-Book consists of title, description, author, publisher, link, imageurl, bookid, owner and status.  All are string except owner, which is an Object ID.  Status is `available` or `pending`.  The default for status is `available`. 
+Book consists of title, description, author, publisher, link, imageurl, bookid, owner and status.  All are string except owner, which is an Object ID.  Status is `available` or `pending`.  The default for status is `available`.  In addition, author is an array.
 
 The user consists of local - username, email, password, addedbooks, city, county and country.  All are string except addedbooks, which is an Object ID.  username, email and password are required.  In addition, addedbooks 
 is an array.
@@ -50,7 +50,7 @@ Taken from [Jeremy L Shepherd - GitHub Profile](https://github.com/jeremylshephe
 
 Tri Vi 
 
-Information Accessed between 17 September 2021 and 1 October 2021.  Did searches on GitHub and FreeCodeCamp Forums.
+Information Accessed between 17 September 2021 and 4 October 2021.  Did searches on GitHub and FreeCodeCamp Forums.
 
 ### Acknowledgements
 

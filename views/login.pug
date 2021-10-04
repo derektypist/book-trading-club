@@ -52,11 +52,11 @@ html
       form(action='/auth/login' method='post')
         // Set Up Log In Form
         article(class='d-flex')
-          label(for='email' class='form-label') Email
-          input(type='email' placeholder='Email' id='email' name='email' required class='form-control')
+          label(for='loginEmail' class='form-label') Email
+          input(type='email' placeholder='Email' id='loginEmail' name='email' required class='form-control')
         article(class='d-flex')
-          label(for='password' class='form-label') Password
-          input(type='password' placeholder='Password' id='password' name='password' required class='form-control')
+          label(for='loginPassword' class='form-label') Password
+          input(type='password' placeholder='Password' id='loginPassword' name='password' required class='form-control')
         input(type='submit' class='btn btn-primary' value='Log In') &nbsp;&nbsp;
         a(href='/auth/signup' class='btn btn-info') Sign Up
         

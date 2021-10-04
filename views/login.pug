@@ -43,3 +43,6 @@ html
     if (message.length > 0)
       // If there are messages
       article(class='alert alert-dismissible alert-warning container-fluid mt-3')
+        button(type='button' class='close' data-dismiss='alert') &times; 
+        h4 Warning!
+        p #{message}

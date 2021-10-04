@@ -50,4 +50,28 @@ html
                 article(class='panel panel-heading bg-main-color')
                   h3(style='color:orange;') Your Book List
                 article(class='panel-body')
+                  table(class='table table-striped table-hover')
+                    thead
+                      tr
+                        th #
+                        th Title
+                        th Image
+                        th Publisher
+                        th Action
+                    tbody
+                      each book,i in books
+                        tr
+                          td #{i+1}
+                          td
+                            a(href='#(book.link' style='text-decoration: none;') #{book.title}
+                          td
+                            img(src='#{book.imageurl' alt='')
+                          td #{book.publisher}
+                          td
+                            form(action='/profile/removeBook/#{book._id'} method='post')
+                              input(type='submit' class='btn btn-primary btn-block' value='Remove')
+          else
+            h4 Your book list is currently empty
+
+
           

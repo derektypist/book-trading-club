@@ -10,7 +10,7 @@ html
     link(rel='stylesheet', href='/public/style.css')
     // Load Scripts
     script(src='https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js')
-  body(class='cremedepeche')
+  body
     // Navbar
     nav(class='navbar navbar-expand-lg navbar-dark bg-primary')
       article(class='container-fluid')
@@ -40,29 +40,12 @@ html
                 a(class='nav-link' href='/profile/setting/#{user._id}') Setting
               li(class='nav-item active')
                 a(class='nav-link' href='/auth/logout')Log Out
-    article(class='container-fluid')
-      h2(class='text-center') Search Book
-        i(class='fas fa-search')
-      article(class='row mt-4 mb-4')
-        each book in books
-          article(class='col-md-3 mb-4')
-            article(class='card')
-              p(class='card-header') #{book.title}
-              img(class='center-block mt-4 mb-4' style='height:168px;width:128px;display:block;' src='#{book.thumbnail}' alt='Card Image')
-              article(class='card-block')
-                if(user)
-                  // If User is Logged In
-                  form(action='/profile/addBook' method='post')
-                    input(type='hidden' name='bookid' value='#{book.id}')
-                    input(type='hidden' name='title' value='#{book.title}')
-                    input(type='hidden' name='description' value='#{book.description}')
-                    input(type='hidden' name='author' value='#{book.author}')
-                    input(type='hidden' name='publisher' value='#{book.publisher}')
-                    input(type='hidden' name='link' value='#{book.link}')
-                    input(type='hidden' name='imageurl' value='#{book.thumbnail}')
-                    input(type='submit' class='card-link btn btn-primary btn-block' value='Add Book')
-                else
-                  // If User is not Logged In
-                  a(href='/auth/login' class='card-link btn btn-primary btn-block' target='_blank') Login To Add Book
-
-      
+    if (message.length > 0)
+      // If there are messages
+      article(class='alert alert-dismissible alert-warning container-fluid mt-3')
+        button(type='button' class='close' data-dismiss='alert') &times; 
+        h4 Warning!
+        p #{message}
+    article(class='container-fluid mt-4' id='login-form')
+      h2 Log In
+      form(action='auth/login' method='post')

@@ -47,10 +47,27 @@ html
         h4 Warning!
         p ${message}
     article(class='mt-3 container-fluid' id='settingForm')
+      // Create Update Profile Form
       form(action='/profile/setting/#{user._id}' method='post')
         h2 Update Profile
           i(class='fas fa-user-edit')
-        article(class='d-flex alert alert-warning' role='alert')
+        article(class='mb-3 alert alert-warning' role='alert')
           label(for='settingUsername' class='form-label') Username
-          input(type='text' id='settingUsername' name='username' placeholder='#{user.local.username}' class='form-control')
-        article(class='d-flex alert alert-warning' role='wlert')
+          input(type='text' id='settingUsername' name='username' placeholder='#{user.local.username}' class='form-control' required)
+        article(class='mb-3 alert alert-warning' role='alert')
+          label(for='settingEmail' class='form-label') Email
+          input(type='email' id='settingEmail' name='email' placeholder='Enter email' class='form-control' required)
+        article(class='mb-3 alert alert-warning' role='alert')
+          label(for='settingPassword' class='form-label') Password
+          input(type='password' id='settingPassword' name='password' placeholder='Enter new password' class='form-control' required)
+        article(class='mb-3')
+          label(for='settingCity' class='form-label') City
+          input(type='text' id='settingCity' name='city' placeholder='Enter city' class='form-control')
+        article(class='mb-3')
+          label(for='settingCounty' class='form-label') County
+          input(type='text' id='settingCounty' name='county' placeholder='Enter county (or equivalent)' class='form-control')
+        article(class='mb-3')
+          label(for='settingCountry' class='form-label') Country
+          input(type='text' id='settingCountry' name='country' placeholder='Enter country name' class='form-control')
+        input(type='submit' class='btn btn-primary' value='Update Profile')
+        

@@ -47,8 +47,28 @@ html
         h4 Warning!
         p #{message}
     article(id='signupForm' class='container-fluid mt-4')
+      // Create Sign Up Form
       h2 Sign Up
         i(class='fas fa-user-plus')
       form(action='/auth/signup' method='post')
         article(class='mb-3')
+          label(for='signupUsername' class='form-label') Username
+          input(type='text' class='form-control' name='username' id='signupUsername' placeholder='Username' required)
+        article(class='mb-3')
+          label(for='signupEmail' class='form-label') Email
+          input(type='email' class='form-control' name='email' id='signupEmail' placeholder='Email' required)
+        article(class='mb-3')
+          label(for='signupPassword' class='form-label') Password
+          input(type='password' class='form-control' name='password' id='signupPassword' placeholder='Password' required)
+        article(class='mb-3')
+          label(for='signupCity' class='form-label') City
+          input(type='text' class='form-control' name='city' id='signupCity' placeholder='City')
+        article(class='mb-3')
+          label(for='signupCounty' class='form-label') County
+          input(type='text' class='form-control' name='county' id='signupCounty' placeholder='County')
+        article(class='mb-3')
+          label(for='signupCountry' class='form-label') Country
+          input(type='text' class='form-control' name='country' id='signupCountry' placeholder='Country')
+        input(type='submit' class='btn btn-primary' value='Sign Up') &nbsp;&nbsp;
+        a(href='/auth/login' class='btn btn-info') Log In
         

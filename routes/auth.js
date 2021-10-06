@@ -10,11 +10,11 @@ router.get('/signup', function(req,res) {
   });
 });
 
-router.post('/signup', passport.authenticate('local-signup'), {
+router.post('/signup', passport.authenticate('local-signup', {
   successRedirect: 'auth/login',
   failureRedirect: 'auth/signup',
   failureFlash: true
-});
+}));
 
 // Login
 router.get('/login', function(req,res) {
@@ -24,11 +24,11 @@ router.get('/login', function(req,res) {
   });
 });
 
-router.post('/login', passport.authenticate('local-login'), {
+router.post('/login', passport.authenticate('local-login', {
   successRedirect: '/profile',
   failureRedirect: '/auth/login',
   failureFlash: true
-});
+}));
 
 // Logout
 router.get('/logout', function(req,res) {

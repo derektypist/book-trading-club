@@ -19,10 +19,10 @@ html
         article(class='collapse navbar-collapse' id='navbarColor01')
           ul(class='navbar-nav mr-auto')
             li(class='nav-item')
-              form(class='d-flex' action='/search' method='get')
-                input(class='form-control mr-sm-2' type='text' placeholder='Book Title (e.g. London)' name='title')
+              form(class='row g-3' action='/search' method='get')
+                input(class='form-control' type='text' placeholder='Book Title (e.g. London)' name='title')
                 button(class='btn btn-success' type='submit') Search &nbsp;
-                  i(class='fas fa-search')
+                    i(class='fas fa-search')
           // Set Navbar according to user login
           ul(class='navbar-nav mr-pills')
             if !user

@@ -7,9 +7,8 @@ html
     // Load Styles
     link(rel='stylesheet' href='https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css')
     link(rel='stylesheet' href='https://use.fontawesome.com/releases/v5.15.4/css/all.css')
-    link(rel='stylesheet', href='/public/style.css')
-    // Load Scripts
-    script(src='https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js')
+    link(rel='stylesheet', href='/style.css')
+    
   body
     // Navbar
     nav(class='navbar navbar-expand-lg navbar-dark bg-primary')
@@ -67,4 +66,5 @@ html
                 img(class='center-block mt-3 mb-3' style='height: 168px; width: 128px; display: block;' src='#{book.thumbnail}' alt='Card Image')
                 article(class='card-block')
                   a(href='#{book.link}' class='card-link btn btn-primary btn-block' target='_blank') More Info
-
+    // Load Scripts
+    script(src='https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js')

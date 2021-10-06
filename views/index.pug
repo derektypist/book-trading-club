@@ -15,29 +15,29 @@ html
       article(class='container-fluid')
         button(class='navbar-toggler navbar-toggler-right' type='button' data-toggle='collapse' data-target='#navbarColor01' aria-controls='navbarColor01' aria-expanded='false' aria-label='Toggle navigation')
           span(class='navbar-toggler-icon')
-          a(class='navbar-brand' href='/') Book TC
-          article(class='collapse navbar-collapse' id='navbarColor01')
-            ul(class='navbar-nav mr-auto')
-              li(class='nav-item')
-                form(class='row g-3' action='/search' method='get')
-                  input(class='form-control' type='text' placeholder='Book Title (e.g. London)' name='title')
-                  button(class='btn btn-success' type='submit') Search &nbsp;
+        a(class='navbar-brand' href='/') Book TC
+        article(class='collapse navbar-collapse' id='navbarColor01')
+          ul(class='navbar-nav mr-auto')
+            li(class='nav-item')
+              form(class='row g-3' action='/search' method='get')
+                input(class='form-control' type='text' placeholder='Book Title (e.g. London)' name='title')
+                button(class='btn btn-success' type='submit') Search &nbsp;
                     i(class='fas fa-search')
-            // Set Navbar according to user login
-            ul(class='navbar-nav mr-pills')
-              if !user
-                li(class='nav-item')
-                  a(class='nav-link' href='/auth/login') Log In
-                li(class='nav-item')
-                  a(class='nav-link' href='/auth/signup') Sign Up
-              else
-                li(class='nav-item active')
-                  a(class='nav-link' href='/profile') Welcome #{user.local.username}!
-                li(class='nav-item active')
-                  a(class='nav-link' href='/allbooks') All Books
-                li(class='nav-item active')
-                  a(class='nav-link' href='/profile/setting/#{user._id}') Setting
-                li(class='nav-item active')
+          // Set Navbar according to user login
+          ul(class='navbar-nav mr-pills')
+            if !user
+              li(class='nav-item')
+                a(class='nav-link' href='/auth/login') Log In
+              li(class='nav-item')
+                a(class='nav-link' href='/auth/signup') Sign Up
+            else
+              li(class='nav-item active')
+                a(class='nav-link' href='/profile') Welcome #{user.local.username}!
+              li(class='nav-item active')
+                a(class='nav-link' href='/allbooks') All Books
+              li(class='nav-item active')
+                a(class='nav-link' href='/profile/setting/#{user._id}') Setting
+              li(class='nav-item active')
                   a(class='nav-link' href='/auth/logout') Log Out
     article(class='jumbotron')
       article(class='container-fluid text-center')

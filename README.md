@@ -34,9 +34,17 @@ Google Books Search
   - order is order results by relevance or newest.  It is set to relevance.
   - lang is restrict the results to a specified language (default en)
 
+## Features
+
+The ability to search books.  Allows the user to Create and Modify Profiles.
+
 ## Technologies
 
 Uses Bcrypt, Body Parser, Connect Flash, Express, Google Books Search, Bootstrap 5.1.1, Font Awesome 5.15.4, Passport, MongoDB, Pug and Mongoose.
+
+## Testing
+
+Ensure user stories have been met.
 
 ## Deployment
 

@@ -28,18 +28,18 @@ html
           ul(class='navbar-nav mr-pills')
             if !user
               li(class='nav-item')
-                a(class='nav-link' href='/auth/login')Log In
+                a(class='nav-link' href='/auth/login') Log In
               li(class='nav-item')
-                a(class='nav-link' href='/auth/signup')Sign Up
+                a(class='nav-link' href='/auth/signup') Sign Up
             else
               li(class='nav-item active')
-                a(class='nav-link' href='/profile')Welcome #{user.local.username}!
+                a(class='nav-link' href='/profile') Welcome #{user.local.username}!
               li(class='nav-item active')
-                a(class='nav-link' href='/allbooks')All Books
+                a(class='nav-link' href='/allbooks') All Books
               li(class='nav-item active')
                 a(class='nav-link' href='/profile/setting/#{user._id}') Setting
               li(class='nav-item active')
-                a(class='nav-link' href='/auth/logout')Log Out
+                a(class='nav-link' href='/auth/logout') Log Out
     article(class='jumbotron')
       article(class='container-fluid text-center')
         h2(class='display-4') Welcome to Book Trading Club

@@ -68,6 +68,6 @@ html
                   h6(class='card-subtitle text-muted ml-4') Publisher: #{book.publisher}
                 img(class='center-block mt-3 mb-3' style='height: 168px; width: 128px; display: block;' src=bookThumbnail alt='Card Image')
                 article(class='card-block')
-                  a(href=bookLink class='card-link btn btn-primary btn-block' title='View More Information for #{book.title}' target='_blank') More Info
+                  a(href=bookLink class='card-link btn btn-primary btn-block' title='View More Information for ' + #{book.title} target='_blank') More Info
     // Load Scripts
     script(src='https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js')

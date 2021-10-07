@@ -14,7 +14,7 @@ body {
 /* Card */
 .card-header {
   height: 125px;
-  color: lightyellow;
+  background-color: lightyellow;
 }
 
 .center-block {

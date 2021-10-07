@@ -64,7 +64,7 @@ html
                 - let bookLink = book.link
                 - let bookTitle = book.title
                 h6(class='card-header') #{book.title}
-                article(class='card-block mt-2')
+                article(class='card-block mt-2 publisher-info')
                   h6(class='card-title ml-4') ISBN13: #{book.industryIdentifiers[0].identifier}
                   h6(class='card-subtitle text-muted ml-4') Publisher: #{book.publisher}
                 img(class='center-block mt-3 mb-3' style='height: 168px; width: 128px; display: block;' src=bookThumbnail alt='Card Image')

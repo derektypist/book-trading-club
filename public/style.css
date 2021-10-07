@@ -8,7 +8,11 @@ body {
 
 /* Navigation */
 .navbar-brand {
-  color: yellow;
+  color: lightgreen;
+}
+
+.nav-link:hover {
+  background-color: darkblue;
 }
 
 /* Card */

@@ -21,8 +21,9 @@ html
             li(class='nav-item')
               form(class='d-flex' action='/search' method='get')
                 input(class='form-control me-2' type='text' placeholder='Book Title (e.g. London)' name='title')
-                button(class='btn btn-success' type='submit') Search &nbsp;
-                  i(class='fas fa-search')
+                span(class='input-group-btn')
+                  button(class='btn btn-success' type='submit') Search &nbsp;
+                    i(class='fas fa-search')
           // Set Navbar according to user login
           ul(class='navbar-nav navbar-right nav-pills')
             if !user

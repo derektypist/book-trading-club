@@ -49,10 +49,10 @@ html
         i(class='fas fa-sign-in-alt')
       form(action='/auth/login' method='post')
         // Set Up Log In Form
-        article(class='d-flex')
+        article(class='mb-3')
           label(for='loginEmail' class='form-label') Email
           input(type='email' placeholder='Email' id='loginEmail' name='email' required class='form-control')
-        article(class='d-flex')
+        article(class='mb-3')
           label(for='loginPassword' class='form-label') Password
           input(type='password' placeholder='Password' id='loginPassword' name='password' required class='form-control')
         input(type='submit' class='btn btn-primary' value='Log In')

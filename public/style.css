@@ -15,11 +15,12 @@ body {
 /* Card */
 .card-header {
   height: 125px;
-  background-color: lightyellow;
+  background-color: yellow;
+  font-weight:bold;
 }
 
 .publisher-info {
-  height: 75px;
+  height: 100px;
 }
 
 .center-block {

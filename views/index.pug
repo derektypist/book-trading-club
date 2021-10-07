@@ -57,7 +57,7 @@ html
       // Display Search Results
       article(class='row mt-4 mb-4')
         each book in books
-            article(class='col md-4 mb-4')
+            article(class='col-md-4 mb-4')
               article(class='card')
                 // Set Variables for Links
                 - let bookThumbnail = book.thumbnail
@@ -70,6 +70,6 @@ html
                 img(class='center-block mt-3 mb-3' style='height: 168px; width: 128px; display: block;' src=bookThumbnail alt='Card Image')
                 // Center the buttons
                 article(class='card-block mx-auto')
-                  a(href=bookLink class='card-link btn btn-primary' title='View More Information for ' + bookTitle target='_blank') More Info
+                  a(href=bookLink class='card-link mx-auto d-block btn btn-primary' title='View More Information for ' + bookTitle target='_blank') More Info
     // Load Scripts
     script(src='https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js')

@@ -22,7 +22,7 @@ html
             li(class='nav-item')
               form(class='d-flex' action='/search' method='get')
                 input(class='form-control mr-sm-2' type='text' placeholder='Book Title (e.g. London)' name='title')
-                button(class='btn btn-outline-success' type='submit') Search
+                button(class='btn btn-success' type='submit') Search &nbsp;
                   i(class='fas fa-search')
           // Set Navbar according to user login
           ul(class='navbar-nav mr-pills')
@@ -41,7 +41,7 @@ html
               li(class='nav-item active')
                 a(class='nav-link' href='/auth/logout') Log Out
     article(class='container-fluid')
-      h2(class='text-center') Search Book
+      h2(class='text-center') Search Book &nbsp;
         i(class='fas fa-search')
       article(class='row mt-4 mb-4')
         each book in books
@@ -72,6 +72,6 @@ html
                     input(type='submit' class='card-link btn btn-primary mx-2' value='Add Book')
                 else
                   // If User is not Logged In
-                  a(href='/auth/login' class='card-link btn btn-primary mx-2' target='_blank') Login To Add Book
+                  a(href='/auth/login' class='card-link btn btn-primary mx-auto' target='_blank') Login To Add Book
 
       

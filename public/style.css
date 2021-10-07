@@ -7,9 +7,6 @@ body {
 }
 
 /* Navigation */
-.navbar-brand {
-  color: lightgreen;
-}
 
 .nav-link:hover {
   background-color: darkblue;
@@ -19,6 +16,10 @@ body {
 .card-header {
   height: 125px;
   background-color: lightyellow;
+}
+
+.publisher-info {
+  height: 75px;
 }
 
 .center-block {

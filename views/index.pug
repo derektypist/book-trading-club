@@ -62,12 +62,13 @@ html
                 // Set Variables for Links
                 - let bookThumbnail = book.thumbnail
                 - let bookLink = book.link
+                - let bookTitle = book.title
                 h6(class='card-header') #{book.title}
                 article(class='card-block mt-2')
                   h6(class='card-title ml-4') ISBN13: #{book.industryIdentifiers[0].identifier}
                   h6(class='card-subtitle text-muted ml-4') Publisher: #{book.publisher}
                 img(class='center-block mt-3 mb-3' style='height: 168px; width: 128px; display: block;' src=bookThumbnail alt='Card Image')
                 article(class='card-block')
-                  a(href=bookLink class='card-link btn btn-primary btn-block' title='View More Information for ' + #{book.title} target='_blank') More Info
+                  a(href=bookLink class='card-link btn btn-primary btn-block' title='View More Information for ' + bookTitle target='_blank') More Info
     // Load Scripts
     script(src='https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js')

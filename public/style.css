@@ -6,9 +6,15 @@ body {
   font-family: "Roboto", Arial, Verdana, sans-serif;
 }
 
+/* Navigation */
+.navbar-brand {
+  color: yellow;
+}
+
 /* Card */
 .card-header {
   height: 125px;
+  color: lightyellow;
 }
 
 .center-block {

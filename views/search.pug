@@ -38,7 +38,7 @@ html(lang='en')
                 a(class='nav-link' href='/profile/setting/' + userId) Setting
               li(class='nav-item')
                 a(class='nav-link' href='/auth/logout') Log Out
-    article(class='container')
+    article(class='container-fluid search-results')
       h2(class='text-center') Search Book &nbsp;
         i(class='fas fa-search')
       article(class='row mt-4 mb-4')
@@ -70,8 +70,8 @@ html(lang='en')
                 else
                   // If User is not Logged In
                   article(class='d-grid gap-2')
-                    a(href=bookLink class='card-link btn btn-info' title='View More Information for ' + bookTitle target='_blank') More Info
-                    a(href='/auth/login' class='card-link btn btn-primary' target='_blank') Login To Add Book
+                    a(href=bookLink class='card-link btn btn-info' title='View More Information for ' + bookTitle target='_blank' style='width:100%;') More Info
+                    a(href='/auth/login' class='card-link btn btn-primary' target='_blank' style='width:100%;') Login To Add Book
     // Load Scripts
     script(src='https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js')
       

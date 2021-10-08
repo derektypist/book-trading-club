@@ -15,30 +15,29 @@ html(lang='en')
       article(class='container-fluid')
         button(class='navbar-toggler navbar-toggler-right' type='button' data-bs-toggle='collapse' data-bs-target='#navbarColor01' aria-controls='navbarColor01' aria-expanded='false' aria-label='Toggle navigation')
           span(class='navbar-toggler-icon')
-        a(class='navbar-brand' href='/') Book TC
+        a(class='navbar-brand' href='/' style='color:yellow;') Book TC
         article(class='collapse navbar-collapse' id='navbarColor01')
-          ul(class='navbar-nav mr-auto')
-            li(class='nav-item')
-              form(class='d-flex' action='/search' method='get')
-                input(class='form-control mr-sm-2' type='text' placeholder='Book Title (e.g. London)' name='title')
-                button(class='btn btn-outline-success' type='submit') Search
-                  i(class='fas fa-search')
+          form(class='d-flex' action='/search' method='get')
+            input(class='form-control me-2' type='text' aria-label='Book Title' placeholder='Book Title (e.g. London)' name='title')
+            button(class='btn btn-outline-success' type='submit') &nbsp;
+              i(class='fas fa-search' style='font-size:1.5rem;')
           // Set Navbar according to user login
-          ul(class='navbar-nav mr-pills')
+          ul(class='navbar-nav me-auto mb-2 mb-lg-0')
             if !user
               li(class='nav-item')
-                a(class='nav-link' href='/auth/login')Log In
+                a(class='nav-link' href='/auth/login') Log In
               li(class='nav-item')
-                a(class='nav-link' href='/auth/signup')Sign Up
+                a(class='nav-link' href='/auth/signup') Sign Up
             else
+              li(class='nav-item')
+                a(class='nav-link' href='/profile') Welcome #{user.local.username}!
+              li(class='nav-item')
+                a(class='nav-link' href='/allbooks') All Books
+              li(class='nav-item')
+                - let userId = user._id
+                a(class='nav-link' href='/profile/setting/' + userId) Setting
               li(class='nav-item active')
-                a(class='nav-link' href='/profile')Welcome #{user.local.username}!
-              li(class='nav-item active')
-                a(class='nav-link' href='/allbooks')All Books
-              li(class='nav-item active')
-                a(class='nav-link' href='/profile/setting/#{user._id}') Setting
-              li(class='nav-item active')
-                a(class='nav-link' href='/auth/logout')Log Out
+                a(class='nav-link' href='/auth/logout') Log Out
     if (message.length > 0)
       // If there are messages
       article(class='alert alert-dismissable alert-warning container-class mt-3')
@@ -49,7 +48,7 @@ html(lang='en')
       // Get Trade Requests Information
       h2 Hello #{user.local.username} 
         i(class='fas fa-user')
-      button(type='button' class='btn btn-primary ') Your trade requests
+      button(type='button' class='btn btn-primary') Your trade requests
         span(class='badge bg-light ml-4') #{reqsFromUserToOwner.length}
       button(type='button' class='btn btn-info') Trade requests for you
         span(class='badge bg-light ml-4') #{reqsFromOwnerToUser.length}
@@ -97,9 +96,9 @@ html(lang='en')
                       td
                         - let tradeReqId = tradeReq._id
                         form(action='trade/acceptRequest/' + tradeReqId method='post')
-                          input(type='submit' class='btn btn-block btn-success' value='Accept')
+                          input(type='submit' class='btn btn-success' value='Accept')
                         form(action='trade/rejectRequest/' + tradeReqId} method='post')
-                          input(type='submit' class='btn btn-block' value='Reject')
+                          input(type='submit' class='btn btn-danger' value='Reject')
         hr
         // Display All Books
         h2(class='mt-2') All Books &nbsp;
@@ -111,9 +110,9 @@ html(lang='en')
             article(class='col-lg-3 mt-2 mb-2')
               article(class='card')
                 img(class='center-block mt-3 mb-3' style='height:168px; width:128px;display:block;' src=bookImageUrl alt='Card Image')
-                article(class='card-block')
+                article(class='card-block d-grid gap-2')
                   form(action='/profile/trade/' + bookId method='post')
-                    input(type='submit' class='btn btn-info btn-block' value='Trade')
+                    input(type='submit' class='btn btn-info' value='Trade')
     // Load Scripts
     script(src='https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js')
 

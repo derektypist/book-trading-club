@@ -55,7 +55,8 @@ html
         article(class='mb-3')
           label(for='loginPassword' class='form-label') Password
           input(type='password' placeholder='Password' id='loginPassword' name='password' required class='form-control')
-        input(type='submit' class='btn btn-primary' value='Log In')
-        a(href='/auth/signup' class='btn btn-info') Sign Up
+        article(class='d-grid gap-2 d-md-flex justify-content-md-end')
+          input(type='submit' class='btn btn-primary me-md-2' value='Log In')
+          a(href='/auth/signup' class='btn btn-info') Sign Up
     // Load Scripts
     script(src='https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js')    

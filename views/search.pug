@@ -1,7 +1,8 @@
 doctype html
-html
+html(lang='en')
   head
     title Book Trading Club
+    meta(charset='utf-8')
     meta(name='description',content='Book Trading Club')
     meta(name='viewport', content='width=device-width, initial-scale=1')
     // Load Styles
@@ -18,7 +19,7 @@ html
         article(class='collapse navbar-collapse' id='navbarColor01')
           form(class='d-flex' action='/search' method='get')
             input(class='form-control me-2' type='text' aria-label='Book Title' placeholder='Book Title (e.g. London)' name='title')
-            button(class='btn btn-success' type='submit') Search &nbsp;
+            button(class='btn btn-success' type='submit') &nbsp;
               i(class='fas fa-search')
           // Set Navbar according to user login
           ul(class='navbar-nav navbar-right nav-pills')

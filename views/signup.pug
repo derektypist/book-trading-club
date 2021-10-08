@@ -1,7 +1,8 @@
 doctype html
-html
+html(lang='en')
   head
     title Book Trading Club
+    meta(charset='utf-8')
     meta(name='description',content='Book Trading Club')
     meta(name='viewport', content='width=device-width, initial-scale=1')
     // Load Styles
@@ -13,15 +14,13 @@ html
     nav(class='navbar navbar-expand-lg navbar-dark bg-primary')
       article(class='container-fluid')
         a(class='navbar-brand' href='/' style='color:yellow;') Book TC
-        button(class='navbar-toggler navbar-toggler-right' type='button' data-toggle='collapse' data-target='#navbarColor01' aria-controls='navbarColor01' aria-expanded='false' aria-label='Toggle navigation')
+        button(class='navbar-toggler navbar-toggler-right' type='button' data-bs-toggle='collapse' data-bs-target='#navbarColor01' aria-controls='navbarColor01' aria-expanded='false' aria-label='Toggle navigation')
           span(class='navbar-toggler-icon')
         article(class='collapse navbar-collapse' id='navbarColor01')
-          ul(class='navbar-nav mr-auto')
-            li(class='nav-item')
-              form(class='d-flex' action='/search' method='get')
-                input(class='form-control me-2' type='text' placeholder='Book Title (e.g. London)' name='title')
-                button(class='btn btn-success' type='submit') Search &nbsp;
-                  i(class='fas fa-search')
+          form(class='d-flex' action='/search' method='get')
+            input(class='form-control me-2' type='text' aria-label='Book Title' placeholder='Book Title (e.g. London)' name='title')
+            button(class='btn btn-success' type='submit' title='Search Book Title') &nbsp;
+              i(class='fas fa-search' style='font-size:1.5rem;')
           // Set Navbar according to user login
           ul(class='navbar-nav navbar-right nav-pills')
             if !user
@@ -30,13 +29,14 @@ html
               li(class='nav-item')
                 a(class='nav-link' href='/auth/signup') Sign Up
             else
-              li(class='nav-item active')
+              li(class='nav-item')
                 a(class='nav-link' href='/profile') Welcome #{user.local.username}!
-              li(class='nav-item active')
+              li(class='nav-item')
                 a(class='nav-link' href='/allbooks') All Books
-              li(class='nav-item active')
-                a(class='nav-link' href='/profile/setting/#{user._id}') Setting
-              li(class='nav-item active')
+              li(class='nav-item')
+                - let userId = user._id
+                a(class='nav-link' href='/profile/setting/' + userId) Setting
+              li(class='nav-item')
                 a(class='nav-link' href='/auth/logout') Log Out
     if (message.length > 0)
       // If there are messages
@@ -46,27 +46,27 @@ html
         p #{message}
     article(id='signupForm' class='container-fluid mt-4')
       // Create Sign Up Form
-      h2 Sign Up &nbsp;
+      h2(class='text-center') Sign Up &nbsp;
         i(class='fas fa-user-plus')
       form(action='/auth/signup' method='post')
         article(class='mb-3')
           label(for='signupUsername' class='form-label') Username
-          input(type='text' class='form-control' name='username' id='signupUsername' placeholder='Username' required)
+          input(type='text' class='form-control' name='username' id='signupUsername' placeholder='Enter Username' required)
         article(class='mb-3')
           label(for='signupEmail' class='form-label') Email
-          input(type='email' class='form-control' name='email' id='signupEmail' placeholder='Email' required)
+          input(type='email' class='form-control' name='email' id='signupEmail' placeholder='Enter Email' required)
         article(class='mb-3')
           label(for='signupPassword' class='form-label') Password
-          input(type='password' class='form-control' name='password' id='signupPassword' placeholder='Password' required)
+          input(type='password' class='form-control' name='password' id='signupPassword' placeholder='Enter Password' required)
         article(class='mb-3')
           label(for='signupCity' class='form-label') City
-          input(type='text' class='form-control' name='city' id='signupCity' placeholder='City')
+          input(type='text' class='form-control' name='city' id='signupCity' placeholder='Enter City (or Post Town)')
         article(class='mb-3')
           label(for='signupCounty' class='form-label') County
-          input(type='text' class='form-control' name='county' id='signupCounty' placeholder='County')
+          input(type='text' class='form-control' name='county' id='signupCounty' placeholder='Enter County (or Equivalent)')
         article(class='mb-3')
           label(for='signupCountry' class='form-label') Country
-          input(type='text' class='form-control' name='country' id='signupCountry' placeholder='Country')
+          input(type='text' class='form-control' name='country' id='signupCountry' placeholder='Enter Country')
         input(type='submit' class='btn btn-primary' value='Sign Up')
         a(href='/auth/login' class='btn btn-info') Log In
     // Load Scripts

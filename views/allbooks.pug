@@ -1,20 +1,19 @@
 doctype html
-html
+html(lang='en')
   head
     title Book Trading Club
+    meta(charset='utf-8')
     meta(name='description',content='Book Trading Club')
     meta(name='viewport', content='width=device-width, initial-scale=1')
     // Load Styles
     link(rel='stylesheet' href='https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css')
     link(rel='stylesheet' href='https://use.fontawesome.com/releases/v5.15.4/css/all.css')
-    link(rel='stylesheet', href='/public/style.css')
-    // Load Scripts
-    script(src='https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js')
+    link(rel='stylesheet', href='/style.css')
   body
     // Navbar
     nav(class='navbar navbar-expand-lg navbar-dark bg-primary')
       article(class='container-fluid')
-        button(class='navbar-toggler navbar-toggler-right' type='button' data-toggle='collapse' data-target='#navbarColor01' aria-controls='navbarColor01' aria-expanded='false' aria-label='Toggle navigation')
+        button(class='navbar-toggler navbar-toggler-right' type='button' data-bs-toggle='collapse' data-bs-target='#navbarColor01' aria-controls='navbarColor01' aria-expanded='false' aria-label='Toggle navigation')
           span(class='navbar-toggler-icon')
         a(class='navbar-brand' href='/') Book TC
         article(class='collapse navbar-collapse' id='navbarColor01')
@@ -74,7 +73,8 @@ html
                       td i+1
                       td tradeReq.book.title
                       td
-                        form(action='trade/cancelRequest/#{tradeReq._id}' method='post')
+                        - let tradeReqId = tradeReq._id
+                        form(action='trade/cancelRequest/' + tradeReqId method='post')
                           input(type='submit' class='btn btn-warning' value='Cancel Request')
       if (reqsFromOwnerToUser.length > 0)
         // Display Trade Requests from Owner to User
@@ -95,22 +95,26 @@ html
                       td i+1
                       td tradeReq.book.title
                       td
-                        form(action='trade/acceptRequest/#{tradeReq._id}' method='post')
+                        - let tradeReqId = tradeReq._id
+                        form(action='trade/acceptRequest/' + tradeReqId method='post')
                           input(type='submit' class='btn btn-block btn-success' value='Accept')
-                        form(action='trade/rejectRequest/#{tradeReq._id' method='post')
+                        form(action='trade/rejectRequest/' + tradeReqId} method='post')
                           input(type='submit' class='btn btn-block' value='Reject')
         hr
         // Display All Books
-        h2(class='mt-2')All Books 
+        h2(class='mt-2') All Books &nbsp;
           i(class='fas fa-book')
         article(class='row')
           each book in books
+            - let bookImageUrl = book.imageurl
+            - let bookId = book._id
             article(class='col-lg-3 mt-2 mb-2')
               article(class='card')
-                img(class='center-block mt-3 mb-3' style='height:168px; width:128px;display:block;' src='#{book.imageurl}' alt='Card Image')
+                img(class='center-block mt-3 mb-3' style='height:168px; width:128px;display:block;' src=bookImageUrl alt='Card Image')
                 article(class='card-block')
-                  form(action='/profile/trade/#{book._id}' method='post')
+                  form(action='/profile/trade/' + bookId method='post')
                     input(type='submit' class='btn btn-info btn-block' value='Trade')
-
+    // Load Scripts
+    script(src='https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js')
 
       

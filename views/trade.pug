@@ -1,7 +1,8 @@
 doctype html
-html
+html(lang='en')
   head
     title Book Trading Club
+    meta(charset='utf-8')
     meta(name='description',content='Book Trading Club')
     meta(name='viewport', content='width=device-width, initial-scale=1')
     // Load Styles
@@ -14,31 +15,31 @@ html
     // Navbar
     nav(class='navbar navbar-expand-lg navbar-dark bg-primary')
       article(class='container-fluid')
-        button(class='navbar-toggler navbar-toggler-right' type='button' data-toggle='collapse' data-target='#navbarColor01' aria-controls='navbarColor01' aria-expanded='false' aria-label='Toggle navigation')
+        button(class='navbar-toggler navbar-toggler-right' type='button' data-bs-toggle='collapse' data-bs-target='#navbarColor01' aria-controls='navbarColor01' aria-expanded='false' aria-label='Toggle navigation')
           span(class='navbar-toggler-icon')
         a(class='navbar-brand' href='/') Book TC
         article(class='collapse navbar-collapse' id='navbarColor01')
           ul(class='navbar-nav mr-auto')
             li(class='nav-item')
               form(class='d-flex' action='/search' method='get')
-                input(class='form-control mr-sm-2' type='text' placeholder='Book Title (e.g. London)' name='title')
-                button(class='btn btn-outline-success' type='submit') Search
+                input(class='form-control me-2' type='text' placeholder='Book Title (e.g. London)' name='title')
+                button(class='btn btn-outline-success' type='submit') &nbsp;
                   i(class='fas fa-search')
           // Set Navbar according to user login
           ul(class='navbar-nav mr-pills')
             if !user
               li(class='nav-item')
-                a(class='nav-link' href='/auth/login')Log In
+                a(class='nav-link' href='/auth/login') Log In
               li(class='nav-item')
-                a(class='nav-link' href='/auth/signup')Sign Up
+                a(class='nav-link' href='/auth/signup') Sign Up
             else
               li(class='nav-item active')
-                a(class='nav-link' href='/profile')Welcome #{user.local.username}!
+                a(class='nav-link' href='/profile') Welcome #{user.local.username}!
               li(class='nav-item active')
-                a(class='nav-link' href='/allbooks')All Books
+                a(class='nav-link' href='/allbooks') All Books
               li(class='nav-item active')
                 a(class='nav-link' href='/profile/setting/#{user._id}') Setting
               li(class='nav-item active')
-                a(class='nav-link' href='/auth/logout')Log Out
+                a(class='nav-link' href='/auth/logout') Log Out
     article(class='container-fluid')
       p This is trading list

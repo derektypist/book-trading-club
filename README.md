@@ -6,6 +6,16 @@ The book trading club has something for everyone.  Items include Web Development
 
 ## UX
 
+**Getting Started**
+
+At the home page, you will see the example search for books relevant to Web Development.  You can get more information on the book.  This information opens in a new tab.  You can search for other books.  In the text field enter book title (e.g. Web Development, BBC Micro) and select Search with the Magnifying Glass Icon.  You will be taken to the Search Results.  If you are not logged in, you can view more information or log in to add the book.
+
+You do not need to sign up to use this application.  However, maximum benefit is obtained by signing up.
+
+When you sign up, the username, email and password fields are compulsory.  So please enter them.
+
+The city, county and country are optional fields.  Select Sign Up to create an account.  Once you have signed up, you can add books, view profile, change settings and cancel/add/reject trade requests. 
+
 **User Stories**
 
 As a user, I can view all books posted by every user.
@@ -48,7 +58,7 @@ Ensure user stories have been met.
 
 ## Deployment
 
-This project is on REPL.
+This project is on [REPL](https://book-trading-club.ddxps46.repl.co)
 
 ## Credits
 

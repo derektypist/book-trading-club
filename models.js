@@ -33,12 +33,12 @@ const UserSchema = new Schema({
 // Apply hashing password
 let saltRounds = 10;
 let salt = bcrypt.genSaltSync(saltRounds);
-UserSchema.methods.genHash = (password) => {
+UserSchema.methods.genHash = function(password) {
   return bcrypt.hashSync(password, salt);
 };
 
 // Compare input password with database password
-UserSchema.methods.validPassword = (password) => {
+UserSchema.methods.validPassword = function(password) {
   return bcrypt.compareSync(password, this.local.password);
 };
 
@@ -72,6 +72,6 @@ const TradeSchema = new Schema({
 const Trade = mongoose.model("trade",TradeSchema);
 
 // Export Modules
-exports.Book = Book;
-exports.User = User;
-exports.Trade = Trade;
+module.exports.Book = Book;
+module.exports.User = User;
+module.exports.Trade = Trade;

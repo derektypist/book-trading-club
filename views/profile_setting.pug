@@ -37,7 +37,7 @@ html(lang='en')
                   Welcome #{user.local.username}!
                 article(class='dropdown-menu' style='position:absolute; transform:translate3d(0px,40px,0px);top:0px;left:0px;')
                   a(class='dropdown-item' href='/profile') Profile
-                  a(class='dropdown-item' href='/profile/trade') Trade List
+                  a(class='dropdown-item' href='/trade') Trade List
                   article(class='dropdown-divider')
                   - let userIdDrop = user._id
                   a(class='dropdown-item' href='/profile/setting/' + userIdDrop) Setting

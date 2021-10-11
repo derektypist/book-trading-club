@@ -39,7 +39,14 @@ body {
 /* Jumbotron */
 .jumbotron {
   background-color: lightblue;
+  padding-top: 1rem;
 }
+
+/* Search Results (Example) */
+#example-search {
+  padding-top: 1rem;
+}
+
 
 /* Background Color for Search */
 .cremedepeche {

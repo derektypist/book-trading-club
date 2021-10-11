@@ -42,11 +42,10 @@ body {
   padding-top: 1rem;
 }
 
-/* Search Results (Example) */
-#example-search {
+/* Search Results */
+#example-search, .search-results {
   padding-top: 1rem;
 }
-
 
 /* Background Color for Search */
 .cremedepeche {

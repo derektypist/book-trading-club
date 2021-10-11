@@ -51,7 +51,7 @@ html(lang='en')
       - let userIdForm = user._id
       - let username = user.local.username
       form(action='/profile/setting/' + userIdForm method='post')
-        h2 Update Profile
+        h2(class='text-center') Update Profile &to nbsp;
           i(class='fas fa-user-edit')
         article(class='mb-3 alert alert-warning' role='alert')
           label(for='settingUsername' class='form-label') Username
@@ -71,6 +71,7 @@ html(lang='en')
         article(class='mb-3')
           label(for='settingCountry' class='form-label') Country
           input(type='text' id='settingCountry' name='country' placeholder='Enter country name' class='form-control')
-        input(type='submit' class='btn btn-primary' value='Update Profile')
+        article(class='d-grid gap-2 mx-auto')
+          input(type='submit' class='btn btn-primary' value='Update Profile')
     // Load Scripts
     script(src='https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js')    

@@ -51,7 +51,7 @@ html(lang='en')
       - let userIdForm = user._id
       - let username = user.local.username
       form(action='/profile/setting/' + userIdForm method='post')
-        h2(class='text-center') Update Profile &to nbsp;
+        h2(class='text-center') Update Profile &nbsp;
           i(class='fas fa-user-edit')
         article(class='mb-3 alert alert-warning' role='alert')
           label(for='settingUsername' class='form-label') Username

@@ -39,8 +39,6 @@ html(lang='en')
               li(class='nav-item')
                 a(class='nav-link' href='/auth/logout') Log Out
     article(class='container-fluid')
-      // Display Title
-      h2(class='text-center') Profile for #{user.local.username}
       article(id='book' class='mt-4')
         if (books.length > 0)
           // If there are books

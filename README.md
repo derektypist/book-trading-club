@@ -14,7 +14,7 @@ You do not need to sign up to use this application.  However, maximum benefit is
 
 When you sign up, the username, email and password fields are compulsory.  So please enter them.
 
-The city, county and country are optional fields.  Select Sign Up to create an account.  Once you have signed up, you can add books, view profile, change settings and cancel/add/reject trade requests. 
+The city, county and country are optional fields.  Select Sign Up to create an account.  Once you have signed up, you will be taken to the login screen.  Once you have logged on, you can add books, view profile, change settings and cancel/add/reject trade requests. 
 
 **User Stories**
 

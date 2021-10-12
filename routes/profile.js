@@ -125,6 +125,20 @@ router.post('/removeBook/:bookID',isLoggedIn, function(req,res) {
   });
 });
 
+// Trade List
+router.get('/trade', isLoggedIn, function(req,res) {
+  Book.find({owner: req.user._id}).exec(function(err,books) {
+    if (err) {
+      console.log(err);
+      return;
+    }
+
+    res.render('profile_tradelist', {
+      title: 'Profile Tradelist',
+      books: books
+    });
+  });
+});
 // Trade Books
 router.post('/trade/:bookID', isLoggedIn, function(req,res) {
   let book_id = req.params.bookID;

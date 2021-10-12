@@ -21,7 +21,7 @@ html(lang='en')
             li(class='nav-item')
               form(class='d-flex' action='/search' method='get')
                 input(class='form-control me-2' type='text' placeholder='Book Title (e.g. London)' name='title')
-                button(class='btn btn-outline-success' type='submit') &nbsp;
+                button(class='btn btn-success' type='submit') &nbsp;
                   i(class='fas fa-search' style='font-size:1.5rem;')
           // Set Navbar according to user login
           ul(class='navbar-nav me-2 mb-2 mb-lg-0')
@@ -33,8 +33,7 @@ html(lang='en')
             else
               // Dropdown Menu
               li(class='nav-item dropdown')
-                a(class='nav-link dropdown-toggle' data-bs-toggle='dropdown' href='#' role='button' aria-haspopup='true' aria-expanded='true')
-                  Welcome #{user.local.username}!
+                a(class='nav-link dropdown-toggle' data-bs-toggle='dropdown' href='#' role='button' aria-haspopup='true' aria-expanded='true') #{user.local.username}!
                 article(class='dropdown-menu')
                   a(class='dropdown-item' href='/profile') Profile
                   a(class='dropdown-item' href='/profile/trade') Trade List
@@ -42,12 +41,7 @@ html(lang='en')
                   - let userIdDrop = user._id
                   a(class='dropdown-item' href='/profile/setting/' + userIdDrop) Setting
               li(class='nav-item')
-                a(class='nav-link' href='/profile') Welcome #{user.local.username}!
-              li(class='nav-item')
                 a(class='nav-link' href='/allbooks') All Books
-              li(class='nav-item')
-                - let userId = user._id
-                a(class='nav-link' href='/profile/setting/' + userId) Setting
               li(class='nav-item')
                 a(class='nav-link' href='/auth/logout') Log Out
     if (message.length > 0)

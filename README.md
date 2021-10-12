@@ -68,11 +68,11 @@ Taken from [Jeremy L Shepherd - GitHub Profile](https://github.com/jeremylshephe
 
 Also taken from [Tri Vi](https://github.com/triminhvi).
 
-Information Accessed between 17 September 2021 and 5 October 2021.  Did searches on GitHub and FreeCodeCamp Forums.
+Information Accessed between 17 September 2021 and 12 October 2021.  Did searches on GitHub and FreeCodeCamp Forums.
 
 ### Acknowledgements
 
-- [Jeremy L Shepherd](https://jeremylshepherd.io/598a63ca1a426b0012850853)
+- [Jeremy L Shepherd - GitHub Repository](https://github.com/jeremylshepherd/fcc-bookclub-app)
 - [Tri Vi - GitHub Repository ](https://github.com/triminhvi/Book_Trading_Club)
 - [Sam Milledge - GitHub Repository on Google Search Books](https://github.com/smilledge/node-google-books-search)
 - [Pug](https://pugjs.org)

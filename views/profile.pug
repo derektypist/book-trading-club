@@ -39,6 +39,8 @@ html(lang='en')
               li(class='nav-item')
                 a(class='nav-link' href='/auth/logout') Log Out
     article(class='container-fluid')
+      // Display Title
+      h2(class='text-center') Profile for #{user.local.username}
       article(id='book' class='mt-4')
         if (books.length > 0)
           // If there are books
@@ -65,7 +67,7 @@ html(lang='en')
                             - let bookLink = book.link
                             - let bookImageUrl = book.imageurl
                             - let bookId = book._id
-                            a(href=bookLink style='text-decoration: none;') #{book.title}
+                            a(href=bookLink target='_blank' style='text-decoration: none;') #{book.title}
                           td
                             img(src=bookImageUrl alt='Front Cover')
                           td #{book.publisher}

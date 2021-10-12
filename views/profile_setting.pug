@@ -60,6 +60,7 @@ html(lang='en')
       // Create Update Profile Form
       - let userIdForm = user._id
       - let username = user.local.username
+      - let useremail = user.local.email
       form(action='/profile/setting/' + userIdForm method='post')
         h2(class='text-center') Update Profile &nbsp;
           i(class='fas fa-user-edit')
@@ -68,7 +69,7 @@ html(lang='en')
           input(type='text' id='settingUsername' name='username' placeholder=username class='form-control' required)
         article(class='mb-3 alert alert-warning' role='alert')
           label(for='settingEmail' class='form-label') Email
-          input(type='email' id='settingEmail' name='email' placeholder='Enter email' class='form-control' required)
+          input(type='email' id='settingEmail' name='email' placeholder=useremail class='form-control' required)
         article(class='mb-3 alert alert-warning' role='alert')
           label(for='settingPassword' class='form-label') Password
           input(type='password' id='settingPassword' name='password' placeholder='Enter new password' class='form-control' required)

@@ -50,7 +50,7 @@ html(lang='en')
         p #{message}
     article(class='container-fluid')
       // Get Trade Requests Information
-      h2 Hello #{user.local.username} 
+      h2 Hello #{user.local.username} &nbsp; 
         i(class='fas fa-user')
       button(type='button' class='btn btn-primary') Your trade requests
         span(class='badge bg-light ml-4') #{reqsFromUserToOwner.length}
@@ -103,20 +103,20 @@ html(lang='en')
                           input(type='submit' class='btn btn-success' value='Accept')
                         form(action='trade/rejectRequest/' + tradeReqId} method='post')
                           input(type='submit' class='btn btn-danger' value='Reject')
-        hr
-        // Display All Books
-        h2(class='mt-2') All Books &nbsp;
-          i(class='fas fa-book')
-        article(class='row')
-          each book in books
-            - let bookImageUrl = book.imageurl
-            - let bookId = book._id
-            article(class='col-lg-3 mt-2 mb-2')
-              article(class='card')
-                img(class='center-block mt-3 mb-3' style='height:168px; width:128px;display:block;' src=bookImageUrl alt='Card Image')
-                article(class='card-block d-grid gap-2')
-                  form(action='/profile/trade/' + bookId method='post')
-                    input(type='submit' class='btn btn-info' value='Trade')
+      hr
+      // Display All Books
+      h2(class='mt-2') All Books &nbsp;
+        i(class='fas fa-book')
+      article(class='row')
+        each book in books
+          - let bookImageUrl = book.imageurl
+          - let bookId = book._id
+          article(class='col-lg-3 mt-2 mb-2')
+            article(class='card')
+              img(class='center-block mt-3 mb-3' style='height:168px; width:128px;display:block;' src=bookImageUrl alt='Card Image')
+              article(class='card-block d-grid gap-2')
+                form(action='/profile/trade/' + bookId method='post')
+                  input(type='submit' class='btn btn-info' value='Trade')
     // Load Scripts
     script(src='https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js')
 

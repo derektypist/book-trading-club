@@ -72,7 +72,7 @@ html(lang='en')
                           td
                             img(src=bookImageUrl alt='Front Cover')
                           td #{book.publisher}
-                          td(class='d-grid gap-1 d-flex d-justify-content-center')
+                          td(class='d-grid gap-1 d-flex d-justify-content-center' style='background-color: lightyellow;')
                             form(action='/profile/removeBook/' + bookId method='post')
                               input(type='submit' class='btn btn-primary' value='Remove')
                             form(action='/profile/trade/' + bookId method='post')

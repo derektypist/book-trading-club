@@ -74,10 +74,10 @@ html(lang='en')
                           td #{book.publisher}
                           td
                             form(action='/profile/removeBook/' + bookId method='post')
-                              input(type='submit' class='btn btn-primary' value='Remove')
+                              article(class='d-grid gap-2')
+                                input(type='submit' class='btn btn-primary' value='Remove')
                             form(action='/profile/trade/' + bookId method='post')
                               article(class='d-grid gap-2')
-                                // Provide spacing for the button
                                 input(type='submit' class='btn btn-success' value='Trade')
         else
           h4 Your book list is currently empty

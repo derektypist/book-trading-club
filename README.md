@@ -46,7 +46,7 @@ Google Books Search
 
 ## Features
 
-The ability to search books.  Allows the user to Create and Modify Profiles.
+The ability to search books.  To add, view and remove books from the user's profile.  Allows the user to Create and Modify Profiles.
 
 ## Technologies
 

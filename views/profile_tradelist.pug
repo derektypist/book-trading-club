@@ -73,7 +73,7 @@ html(lang='en')
                             img(src=bookImageUrl alt='Front Cover')
                           td #{book.publisher}
                           td
-                            form(action='/profile/removeBook/' + bookId} method='post')
+                            form(action='/profile/removeBook/' + bookId method='post')
                               input(type='submit' class='btn btn-primary' value='Remove') &nbsp;
                             form(action='/profile/trade/' + bookId method='')
                               input(type='submit' class='btn btn-success' value='Trade')

@@ -74,7 +74,7 @@ html(lang='en')
                           td #{book.publisher}
                           td
                             form(action='/profile/removeBook/' + bookId method='post')
-                              input(type='submit' class='btn btn-primary' value='Remove') &nbsp;
+                              input(type='submit' class='btn btn-primary' value='Remove')
                             form(action='/profile/trade/' + bookId method='')
                               input(type='submit' class='btn btn-success' value='Trade')
         else
